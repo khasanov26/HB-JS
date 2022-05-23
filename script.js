@@ -1,32 +1,39 @@
-const print = (a = 'test') => {
-   console.log(a);
+// 1
+const arr = [1, 2, 3, 5, 1, 6, 2, 5, 6, 7]; 
+let uniqueArr = [...new Set(arr)];
+console.log(uniqueArr)
+
+// 2
+const obj1 = { 
+   id: 1,
+   name: "userName" 
+};
+const obj2 = { 
+   d: 1, 
+   password: "qwerty" 
+} 
+
+let obj3 = {
+   ...obj1,
+   ...obj2
 }
 
-print()
+console.log(obj3);
 
-const user = [1, 2]
+// 3
+// const add = function (x, y) { return x + y }
+const add = (x, y) => x + y
 
-const [a, b] = user
-console.log(a)
-console.log(b)
+// 4
+const promise = new Promise((resolve, reject) => {
+   setTimeout(() => {
+      resolve()
+   }, 5000)
+  
+})
+promise.then(() => { 
+   console.log('Выполнилось через 5 секунд!')
+});
 
-let users = new Set()
-
-users.add({name: "Andrey"})
-users.add({name: "Antion"})
-
-users.forEach(item => console.log(item))
 
 
-
-map.set('str', 'string') // Записываем в паре ключ, значение
-map.set(1, 'number')
-map.set(true, 'boolean')
-
-// общее колчисетво полей смотрится при помощи size
-console.log(map.size);
-// Что бы вывести одно поле, используют метод .get,
-// в скобках указывается ключ этого поля
-console.log(map.get('str'));
-console.log(map.get(1));
-console.log(map.get(true));
